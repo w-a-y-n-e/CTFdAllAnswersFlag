@@ -14,7 +14,7 @@ class CTFdAllAnswersFlag(flags.BaseFlag):
         saved = chal_key_obj.content.split(",")
         provided = provided.split(",")
         data = chal_key_obj.data
-        if len(set(saved)) != len(set(provided)):
+        if len(saved) != len(provided):
             return False
         if data == "case_insensitive":
             saved_stripped = set([s.strip().lower() for s in saved])
